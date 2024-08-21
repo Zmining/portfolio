@@ -17,13 +17,11 @@ fetch('https://api.github.com/users/zmining/repos', {
             `;
             projetosContainer.appendChild(projetoElement);
         });
-    }
-          else {
+    } else {
         console.error('Resposta inesperada:', data);
     }
 })
 .catch(error => console.error('Erro ao carregar repositórios:', error));
-
 
 const curriculum = document.getElementById('curriculum');
 
