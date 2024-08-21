@@ -1,27 +1,29 @@
-fetch('https://api.github.com/users/zmining/repos', {
-    headers: {
-        'Authorization': 'token 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'
-    }
-})
-.then(response => response.json())
-.then(data => {
-    console.log(data);
-    if (Array.isArray(data)) {
-        data.filter(repo => !projetosParaExcluir.includes(repo.name))
-            .forEach(repo => {
+async function apiResponseGit(){
+    const apiResponse = await fetch("https://api.github.com/users/zmining/repos")
+    const data = await apiResponse.json()
+
+    console.log(data)
+
+    for(var key in data){
+        const projetosParaExcluir = ['Zmining', 'E-Commerce'];
+        if(data[key].name != projetosParaExcluir[0] && data[key].name != projetosParaExcluir[1]){
+            const projetosContainer = document.getElementById('projetos');
+            console.log(data[key].name)
+            console.log(data[key].description)
             const projetoElement = document.createElement('div');
-            projetoElement.className = 'projeto';
-            projetoElement.innerHTML = `
-                <h2><a href="${repo.html_url}" target="_blank">${repo.name}</a></h2>
-                <p>${repo.description || 'Sem descrição'}</p>
-            `;
-            projetosContainer.appendChild(projetoElement);
-        });
-    } else {
-        console.error('Resposta inesperada:', data);
+                projetoElement.className = 'projeto';
+                projetoElement.innerHTML = `
+                    <h2><a href="${data[key].html_url}" target="_blank">${data[key].name}</a></h2>
+                    <p>${data[key].description || 'Sem descrição'}</p>
+                `;
+                projetosContainer.appendChild(projetoElement);
+        }
     }
-})
-.catch(error => console.error('Erro ao carregar repositórios:', error));
+
+}
+
+
+apiResponseGit()
 
 const curriculum = document.getElementById('curriculum');
 
