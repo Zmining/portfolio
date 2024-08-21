@@ -1,6 +1,6 @@
 fetch('https://api.github.com/users/zmining/repos', {
     headers: {
-        'Authorization': 'token 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'
+        'Authorization': 'token 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'
     }
 })
 .then(response => response.json())
