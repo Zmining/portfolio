@@ -26,8 +26,8 @@ fetch('https://api.github.com/users/zmining/repos', {
 const curriculum = document.getElementById('curriculum');
 
 curriculum.addEventListener('click', function(){
-    const link = document.createElement('a')
-    link.href = './assets/archives/resume.pdf'
-    link.download = 'resume.pdf'
+    const link = document.createElement('a');
+    link.href = './assets/archives/resume.pdf';
+    link.download = 'resume.pdf';
     link.click();
 });
