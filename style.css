@@ -107,7 +107,7 @@ main {
 #intro{
     width: 100%;
     display: flex;
-    padding-top: 10%;
+    padding-top: 15%;
     margin-bottom: 15%;
     flex-direction: column;
     flex: 1 1 auto;
@@ -123,7 +123,7 @@ main {
 }
 
 #sobreMim{
-    padding-top: 10%;
+    padding-top: 15%;
     margin-bottom: 15%;
     width: 100%;
     display: flex;
@@ -147,7 +147,7 @@ main {
 }
 
 #Skills{
-    padding-top: 10%;
+    padding-top: 15%;
     margin-bottom: 15%;
     width: 100%;
     display: flex;
